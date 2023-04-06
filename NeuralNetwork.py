@@ -14,9 +14,9 @@ from matplotlib import pyplot as plt
 
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
-
-
 class NeuralNetworkLR:
+    """Red neuronal con salida real, regresión"""
+    
     def __init__(self, epochs, lr, train_data, test_data, validate_data, neurons, model_path):
         """
         epochs = int, número de "rondas" de entrenamiento
