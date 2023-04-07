@@ -14,6 +14,7 @@ from matplotlib import pyplot as plt
 from NeuralNetwork import *
 import os
 
+
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
 TRAINSET_PATH = "./data/train_set"
