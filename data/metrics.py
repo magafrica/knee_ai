@@ -36,11 +36,23 @@ with open("./data/unique_values.json", "w") as outfile:
 describe_values = {}   
 for col in df:
        content = df[col].describe()
-       print(content)
        content = content.to_dict()
-       print(content)
        describe_values[str(col)] = content
        
 json_describe = json.dumps(describe_values,indent=4, cls=NpEncoder)
-with open("./data/statistis.json", "w") as outfile:
+with open("./data/statistics.json", "w") as outfile:
     outfile.write(json_describe)
+
+
+with open('./data/statistics.json', 'r') as f:
+    data = json.load(f)
+
+for entry in data:
+    print(data[entry])
+    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Kellgren', 'Extrusion', 'lysholm score post', 'Grado', 'Angulo']:
+        result = data[entry]['freq'] / data[entry]['count']
+        print("result")
+        data[entry]['stability'] = result
+
+with open('./data/statistics.json', 'w') as f:
+    json.dump(data, f, indent=4)
