@@ -1,57 +1,203 @@
 {
-    "NHC": "[2278908  249498  231061  202785 1156669  498485  275155 2050997 1707924\n 2268495  145293 1185476  105427 1085670 1948092  867819  909360  810354\n 2272057 1517560    5579 2236415  104215  106557  262626  798730 1681263\n 2370517 2261768 2317858 2316774 2281093 2360739 2316360 2385086 2239856\n  468358 1835469 1815231 2374646 2216697 1404785 2346424 2214748 1417494\n  758347 1007658 1468181 1974393 1084979 2362423  448430 2284548 2366703\n 2281735  367230 2376790 2376775 2379082 2294223 1961884  772115 2368808\n 2007215  306513  645575  709279 2386563 2326643 2382631  417230 2372289\n 2369541 1069467  972378 2405844 2304757 1381372  723543  799159  532841\n 1319537 1344403  982495  508992 1953690 1777855 2176879 1916812  877657\n 2035987 1125503 2121818  205280  214143  316400  149340  118768  321491\n   11035  232207  340204  149051  197348  311089    9326  264110   45974\n  217785  263490  261247   11566   26100   12711  220167   81988  234420\n   29532   85180  180306    8509  269291  126289   20914  138478   86355\n  269023   90975   58857  276745  254356  282926   34901  231952  270500\n  276426   56613   43952  257845   56658   20438]",
-    "Hospital": "['FJD' 'HGV']",
-    "Edad": "['FJD' 'HGV']",
-    "Sexo": "['MUJER' 'HOMBRE' nan]",
-    "Lateralidad": "['DERECHA' 'IZQUIERDA' nan]",
-    "fecha de cirug\u00eda": "[                          'NaT' '2021-05-26T00:00:00.000000000'\n '2021-08-18T00:00:00.000000000' '2021-07-16T00:00:00.000000000'\n '2021-07-20T00:00:00.000000000' '2021-10-19T00:00:00.000000000'\n '2021-10-26T00:00:00.000000000' '2021-11-08T00:00:00.000000000'\n '2021-11-26T00:00:00.000000000' '2021-11-29T00:00:00.000000000'\n '2021-12-01T00:00:00.000000000' '2021-12-13T00:00:00.000000000'\n '2021-12-17T00:00:00.000000000' '2021-12-21T00:00:00.000000000'\n '2021-12-28T00:00:00.000000000' '2021-12-30T00:00:00.000000000'\n '2022-01-11T00:00:00.000000000' '2022-01-31T00:00:00.000000000'\n '2022-02-09T00:00:00.000000000' '2022-02-11T00:00:00.000000000'\n '2022-02-16T00:00:00.000000000' '2022-02-18T00:00:00.000000000'\n '2022-03-02T00:00:00.000000000' '2022-03-08T00:00:00.000000000'\n '2021-10-08T00:00:00.000000000' '2021-10-14T00:00:00.000000000'\n '2021-10-18T00:00:00.000000000' '2021-10-25T00:00:00.000000000'\n '2021-10-27T00:00:00.000000000' '2021-11-03T00:00:00.000000000'\n '2021-01-03T00:00:00.000000000' '2021-11-10T00:00:00.000000000'\n '2021-11-11T00:00:00.000000000' '2021-11-16T00:00:00.000000000'\n '2021-11-17T00:00:00.000000000' '2021-11-18T00:00:00.000000000'\n '2021-11-19T00:00:00.000000000' '2021-11-23T00:00:00.000000000'\n '2021-11-24T00:00:00.000000000' '2021-11-30T00:00:00.000000000'\n '2021-12-14T00:00:00.000000000' '2021-12-15T00:00:00.000000000'\n '2022-01-05T00:00:00.000000000' '2022-01-12T00:00:00.000000000'\n '2022-02-08T00:00:00.000000000' '2023-02-15T00:00:00.000000000'\n '2023-02-17T00:00:00.000000000' '2023-02-18T00:00:00.000000000'\n '2022-03-01T00:00:00.000000000' '2022-03-04T00:00:00.000000000'\n '2022-03-11T00:00:00.000000000' '2022-03-17T00:00:00.000000000'\n '2022-06-28T00:00:00.000000000' '2021-08-05T00:00:00.000000000'\n '2021-03-16T00:00:00.000000000' '2022-05-26T00:00:00.000000000'\n '2022-07-20T00:00:00.000000000' '2022-10-04T00:00:00.000000000'\n '2022-10-06T00:00:00.000000000' '2022-10-11T00:00:00.000000000'\n '2022-11-10T00:00:00.000000000' '2022-11-21T00:00:00.000000000'\n '2022-11-25T00:00:00.000000000' '2023-01-05T00:00:00.000000000'\n '2021-03-03T00:00:00.000000000' '2021-03-05T00:00:00.000000000'\n '2021-03-09T00:00:00.000000000' '2021-03-11T00:00:00.000000000'\n '2021-03-12T00:00:00.000000000' '2021-03-17T00:00:00.000000000'\n '2021-04-09T00:00:00.000000000' '2021-04-13T00:00:00.000000000'\n '2021-04-16T00:00:00.000000000' '2021-04-27T00:00:00.000000000'\n '2021-04-30T00:00:00.000000000' '2021-05-05T00:00:00.000000000'\n '2021-05-11T00:00:00.000000000' '2021-05-25T00:00:00.000000000'\n '2021-06-24T00:00:00.000000000' '2021-06-30T00:00:00.000000000'\n '2021-07-07T00:00:00.000000000' '2021-07-08T00:00:00.000000000'\n '2021-07-09T00:00:00.000000000' '2021-07-12T00:00:00.000000000'\n '2021-07-30T00:00:00.000000000' '2021-08-13T00:00:00.000000000'\n '2021-08-16T00:00:00.000000000' '2021-09-02T00:00:00.000000000'\n '2021-09-03T00:00:00.000000000' '2021-10-01T00:00:00.000000000'\n '2020-11-13T00:00:00.000000000' '2020-11-24T00:00:00.000000000'\n '2020-12-09T00:00:00.000000000' '2020-12-10T00:00:00.000000000']",
-    "Cirugia": "[nan 'SUTURA' 'MENISECTOMIA PARCIAL' 'MENISECTOMIA' 'REANCLAJE RAIZ']",
-    "Traumatica": "[nan 'SI' 'NO']",
-    "Dolor Interlinea": "[nan 'SI' 'NO']",
-    "MCMurray": "[nan 'NO CONCLUYE' 'SI' 'NO']",
-    "IMC": "[nan 'NO CONCLUYE' 'SI' 'NO']",
-    "HTA": "['NO' 'SI']",
-    "C. Isquemica": "['NO' 'SI']",
-    "Arritmia": "['NO' 'SI']",
-    "Dislipemia": "['NO' 'SI' nan]",
-    "Anticoagulacion": "['NO' 'SI']",
-    "Fumador": "['NO' 'SI']",
-    "DM": "['SI' 'NO']",
-    "Insulina": "['SI' 'NO']",
-    "Cancer": "['SI' 'NO']",
-    "Insuficiencia renal": "['NO' 'SI']",
-    "SAOS": "['NO' 'SI']",
-    "Parkinson": "['NO']",
-    "Sd. Ansioso depresivo": "['NO' 'SI']",
-    "Fibromialgia": "['NO' 'SI']",
-    "Cirugia Previa LCA": "['NO']",
-    "Cirugia Previa Meniscal": "['NO' 'SI']",
-    "Espacio Intraarticular (mm)": "['NO' 'SI']",
-    "Esclerosis subcondral": "[nan 'SI' 'NO']",
-    "Osteofito": "[nan 'NO' 'SI']",
-    "Genu varo": "[nan 'SI' 'NO']",
-    "Angulo 1": "[nan 'SI' 'NO']",
-    "Genu valgo": "[nan 'SI' 'NO']",
-    "Angulo": "[  nan  4.3   3.87  3.4   6.4   5.1   2.75  6.86  7.79  6.84  6.09 11.8\n  6.56  7.    5.   13.    5.9 ]",
-    "Kellgren": "[  nan  4.3   3.87  3.4   6.4   5.1   2.75  6.86  7.79  6.84  6.09 11.8\n  6.56  7.    5.   13.    5.9 ]",
-    "Lateralidad 2": "['MEDIAL' 'EXTERNO' 'INTERNO' nan 'LATERAL' 'AMBOS' 'NO']",
-    "Tipo de Rotura": "['COMPLEJA' 'ASA DE CUBO' 'RADIAL' 'OBLICUA' nan 'HORIZONTAL' 'RAMPA'\n 'VERTICAL' 'DEGENERATIVA' 'PICO DE LORO']",
-    "Zona Menisco": "['CUERNO POSTERIOR' nan 'CUERPO' 'DOS' 'CUERNO ANTERIOR']",
-    "Raiz Meniscal": "['SI' 'NO' nan]",
-    "Extrusion": "['SI' 'NO' nan]",
-    "Edema Oseo": "['SI' 'NO' nan]",
-    "Zona": "['c\u00f3ndilo' nan 'meseta' 'MESETA' 'AMBOS' 'CONDILO' 'PATELLA' 'TIBIA'\n 'Meseta interna' 'Meseta' 'CFI' 'CFI + MTI' 'meseta interna'\n 'compartimento interno' 'meseta ' 'CFE' 'condilo']",
-    "tipo edema": "['COMPLETE' 'EDGE' 'ARTICULAR' nan 'FULL' 'DISTAL']",
-    "Condropatia": "['NO' 'SI' nan]",
-    "Grado": "['NO' 'SI' nan]",
-    "Condropatia Femoropatelar": "['NO' 'SI' nan]",
-    "LCA": "['NO' nan 'SI']",
-    "Quiste baker": "['SI' 'NO' nan]",
-    "Quiste parameniscal": "['SI' 'NO' nan]",
-    "lysholm score post": "['SI' 'NO' nan]",
-    "mejora con la cirug\u00eda": "[nan 'SI' 'NO']",
-    "satisfecho con la cirug\u00eda (1-4)": "[nan  3.  2.  4.  1.]",
-    "dolor actual 0-10": "[nan  0.  1.  9.  8.  3. 10.  7.  6.  5.  4.]",
-    "Incorporaci\u00f3n vida laboral": "[nan 'SI' 'NO']",
-    "Deporte": "[nan 'SI' 'NO']"
+  "Hospital": [
+    "FJD",
+    "HGV"
+  ],
+  "Sexo": [
+    "MUJER",
+    "HOMBRE",
+    NaN
+  ],
+  "Lateralidad": [
+    "DERECHA",
+    "IZQUIERDA",
+    NaN
+  ],
+  "Cirugia": [
+    NaN,
+    "SUTURA",
+    "MENISECTOMIA PARCIAL",
+    "MENISECTOMIA",
+    "REANCLAJE RAIZ"
+  ],
+  "Traumatica": [
+    NaN,
+    "SI",
+    "NO"
+  ],
+  "Dolor Interlinea": [
+    NaN,
+    "SI",
+    "NO"
+  ],
+  "MCMurray": [
+    NaN,
+    "no concluyente",
+    "SI",
+    "NO"
+  ],
+  "HTA": [
+    "NO",
+    "SI"
+  ],
+  "C. Isquemica": [
+    "NO",
+    "SI"
+  ],
+  "Arritmia": [
+    "NO",
+    "SI"
+  ],
+  "Dislipemia": [
+    "NO",
+    "SI",
+    NaN
+  ],
+  "Anticoagulacion": [
+    "NO",
+    "SI"
+  ],
+  "Fumador": [
+    "NO",
+    "SI"
+  ],
+  "DM": [
+    "SI",
+    "NO"
+  ],
+  "Insulina": [
+    "SI",
+    "NO"
+  ],
+  "Cancer": [
+    "NO",
+    "SI"
+  ],
+  "Insuficiencia renal": [
+    "NO",
+    "SI"
+  ],
+  "SAOS": [
+    "NO",
+    "SI"
+  ],
+  "Parkinson": [
+    "NO"
+  ],
+  "Sd. Ansioso depresivo": [
+    "NO",
+    "SI"
+  ],
+  "Fibromialgia": [
+    "NO",
+    "SI"
+  ],
+  "Cirugia Previa LCA": [
+    "NO"
+  ],
+  "Cirugia Previa Meniscal": [
+    "NO",
+    "SI"
+  ],
+  "Esclerosis subcondral": [
+    NaN,
+    "SI",
+    "NO"
+  ],
+  "Osteofito": [
+    NaN,
+    "NO",
+    "SI"
+  ],
+  "Genu varo": [
+    NaN,
+    "SI",
+    "NO"
+  ],
+  "Genu valgo": [
+    NaN,
+    "SI",
+    "NO"
+  ],
+  "Lateralidad 2": [
+    "MEDIAL",
+    "EXTERNO",
+    "INTERNO",
+    NaN,
+    "LATERAL",
+    "AMBOS",
+    "NO",
+    "DERECHA",
+    "IZQUIERDA"
+  ],
+  "Tipo de Rotura": [
+    "COMPLEJA",
+    "ASA DE CUBO",
+    "RADIAL",
+    "OBLICUA",
+    NaN,
+    "HORIZONTAL",
+    "RAMPA",
+    "VERTICAL",
+    "DEGENERATIVA",
+    "PICO DE LORO"
+  ],
+  "Zona Menisco": [
+    "CUERNO POSTERIOR",
+    NaN,
+    "CUERPO",
+    "DOS",
+    "CUERNO ANTERIOR"
+  ],
+  "Raiz Meniscal": [
+    "SI",
+    "NO",
+    NaN
+  ],
+  "Edema Oseo": [
+    "SI",
+    "NO",
+    NaN
+  ],
+  "Zona": [
+    "CONDILO",
+    NaN,
+    "MESETA",
+    "AMBOS",
+    "PATELLA",
+    "TIBIA"
+  ],
+  "tipo edema": [
+    "COMPLETE",
+    "EDGE",
+    "ARTICULAR",
+    NaN,
+    "FULL",
+    "DISTAL"
+  ],
+  "Condropatia": [
+    "NO",
+    "SI",
+    NaN
+  ],
+  "Condropatia Femoropatelar": [
+    "NO",
+    "SI",
+    NaN
+  ],
+  "LCA": [
+    "NO",
+    NaN,
+    "SI"
+  ],
+  "Quiste baker": [
+    "SI",
+    "NO",
+    NaN
+  ],
+  "Quiste parameniscal": [
+    "SI",
+    "NO",
+    NaN
+  ]
 }
