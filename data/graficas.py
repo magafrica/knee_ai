@@ -1,5 +1,7 @@
 import pandas as pd
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+import json
+import numpy as np
 
 df = pd.read_csv('./data/datos_procesados.csv', delimiter=';')
 df_to_plot = df.drop(columns=["Unnamed: 0", "NHC", 'lysholm score post'])
@@ -50,4 +52,36 @@ plt.xlabel('Rango')
 plt.ylabel('Frecuencia')
 plt.title('Lysholm Score')
 plt.savefig("./data/graficas/lysholm_categories.png")
+plt.show()
+
+#GRAFICA ESTABILIIDAD
+with open('./data/statistics.json', 'r') as f:
+    data = json.load(f)
+    
+column_name = []
+stability = []   
+for entry in data:
+    print(data[entry])
+    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Kellgren', 'Extrusion', 'lysholm score post', 'Grado', 'Angulo']:
+        column_name.append(entry)
+        stability.append(data[entry]["stability"])
+        
+
+stability_value_df = pd.DataFrame({'column_name': column_name,
+                                 'stability': stability,
+                                  })
+            
+#print(missing_value_df)
+# Establecer umbral
+threshold = 0.85
+
+# Asignar colores basado en el umbral
+colors = np.where(stability_value_df['stability'] >= threshold, 'r', 'b')
+
+# Graficar
+stability_value_df.plot(x='column_name', y='stability', kind='bar', color=colors)
+
+# Mostrar la grafica
+plt.title('Estabilidad de los Atributos')
+plt.savefig('./data/graficas/Stability_values.png')
 plt.show()
