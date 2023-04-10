@@ -15,7 +15,7 @@ class NpEncoder(json.JSONEncoder):
 #LEER ARCHIVO NUEVO
 
 
-df = pd.read_csv('./data/datos_procesados.csv', delimiter=';')
+df = pd.read_csv('./data/syntehtic_data.csv', delimiter=';')
 df.drop(columns=["Unnamed: 0", "NHC"], inplace=True)
 
 
@@ -29,7 +29,7 @@ for col in df:
               unique_values[str(col)] = content
   
 json_object = json.dumps(unique_values, indent= 2)
-with open("./data/unique_values.json", "w") as outfile:
+with open("./data/unique_values_synthetic.json", "w") as outfile:
     outfile.write(json_object)
 
 #Describe values JSON
@@ -40,11 +40,11 @@ for col in df:
        describe_values[str(col)] = content
        
 json_describe = json.dumps(describe_values,indent=4, cls=NpEncoder)
-with open("./data/statistics.json", "w") as outfile:
+with open("./data/statistics_synthetic.json", "w") as outfile:
     outfile.write(json_describe)
 
 
-with open('./data/statistics.json', 'r') as f:
+with open('./data/statistics_synthetic.json', 'r') as f:
     data = json.load(f)
 
 for entry in data:
@@ -54,5 +54,5 @@ for entry in data:
         print("result")
         data[entry]['stability'] = result
 
-with open('./data/statistics.json', 'w') as f:
+with open('./data/statistics_synthetic.json', 'w') as f:
     json.dump(data, f, indent=4)

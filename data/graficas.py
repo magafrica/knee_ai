@@ -10,14 +10,17 @@ df_to_plot = df.drop(columns=["Unnamed: 0", "NHC", 'lysholm score post'])
 
 percent_missing = df_to_plot.isnull().sum() * 100 / len(df_to_plot)
 missing_value_df = pd.DataFrame({'column_name': df_to_plot.columns,
-                                 'percent_missing': percent_missing,
+                                 'Porcentaje': percent_missing,
                                   })
 percent_missing = percent_missing.to_list()
 columns = df_to_plot.columns.to_list()       
+threshold = 50
 
+# Asignar colores basado en el umbral
+colors = np.where(missing_value_df['Porcentaje'] >= threshold, '#d34040', '#4090d3')
         
 #print(missing_value_df)
-missing_value_df.plot(x='column_name', y='percent_missing', kind='bar')
+missing_value_df.plot(x='column_name', y='Porcentaje', kind='barh', color=colors)
 plt.title('Porcentaje de valores sin rellenar de 142 filas')
 plt.savefig('./data/graficas/Missing_values.png')
 plt.show()
@@ -46,7 +49,7 @@ cat_data = pd.Categorical(data, categories=category_order, ordered=True)
 ordered_data = pd.Series(cat_data)
 
 # Grafica el histograma ordenado
-plt.hist(ordered_data, bins=4, edgecolor='black')
+plt.hist(ordered_data, bins=4, color= '#4090d3', edgecolor='black')
 plt.xticks(category_order)
 plt.xlabel('Rango')
 plt.ylabel('Frecuencia')
@@ -68,7 +71,7 @@ for entry in data:
         
 
 stability_value_df = pd.DataFrame({'column_name': column_name,
-                                 'stability': stability,
+                                 'Estabilidad': stability,
                                   })
             
 #print(missing_value_df)
@@ -76,10 +79,10 @@ stability_value_df = pd.DataFrame({'column_name': column_name,
 threshold = 0.85
 
 # Asignar colores basado en el umbral
-colors = np.where(stability_value_df['stability'] >= threshold, 'r', 'b')
+colors = np.where(stability_value_df['Estabilidad'] >= threshold, '#d34040', '#4090d3')
 
 # Graficar
-stability_value_df.plot(x='column_name', y='stability', kind='bar', color=colors)
+stability_value_df.plot(x='column_name', y='Estabilidad', kind='barh', color=colors)
 
 # Mostrar la grafica
 plt.title('Estabilidad de los Atributos')
