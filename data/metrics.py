@@ -15,7 +15,7 @@ class NpEncoder(json.JSONEncoder):
 #LEER ARCHIVO NUEVO
 
 
-df = pd.read_csv('./data/syntehtic_data.csv', delimiter=';')
+df = pd.read_csv('./data/synthetic_data.csv', delimiter=';')
 df.drop(columns=["Unnamed: 0", "NHC"], inplace=True)
 
 

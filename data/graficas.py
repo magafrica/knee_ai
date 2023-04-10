@@ -21,7 +21,7 @@ colors = np.where(missing_value_df['Porcentaje'] >= threshold, '#d34040', '#4090
         
 #print(missing_value_df)
 missing_value_df.plot(x='column_name', y='Porcentaje', kind='barh', color=colors)
-plt.title('Porcentaje de valores sin rellenar de 142 filas')
+plt.title('Porcentaje de valores sin rellenar')
 plt.savefig('./data/graficas/Missing_values.png')
 plt.show()
 
