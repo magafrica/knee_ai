@@ -30,7 +30,7 @@ validate_set = validate_set.to_numpy(dtype = 'float64')
 test_set = pd.read_csv(TESTSET_PATH)
 test_set = test_set.to_numpy(dtype = 'float64')
 
-neural_network = NeuralNetworkLR(300, 0.1, train_set, test_set, validate_set, [10,10], MODEL_PATH)
+neural_network = NeuralNetwork(300, 0.1, train_set, test_set, validate_set, [10,10], MODEL_PATH)
 neural_network.create_network()
 neural_network.split_datasets()
 results = neural_network.train()
