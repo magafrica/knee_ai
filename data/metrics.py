@@ -15,7 +15,7 @@ class NpEncoder(json.JSONEncoder):
 #LEER ARCHIVO NUEVO
 
 
-df = pd.read_csv('./data/synthetic_data.csv', delimiter=';')
+df = pd.read_csv('./data/datos_procesados.csv', delimiter=';')
 df.drop(columns=["Unnamed: 0", "NHC"], inplace=True)
 
 
@@ -23,13 +23,13 @@ df.drop(columns=["Unnamed: 0", "NHC"], inplace=True)
 #Unique values JSON
 unique_values = {}
 for col in df:
-       if col not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Kellgren', 'Extrusion', 'lysholm score post', 'Grado', 'Angulo']:
+       if col not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Extrusion', 'lysholm score post', 'Angulo']:
               content = df[col].unique()
               content = content.tolist()
               unique_values[str(col)] = content
   
 json_object = json.dumps(unique_values, indent= 2)
-with open("./data/unique_values_synthetic.json", "w") as outfile:
+with open("./data/unique_values.json", "w") as outfile:
     outfile.write(json_object)
 
 #Describe values JSON
@@ -40,19 +40,19 @@ for col in df:
        describe_values[str(col)] = content
        
 json_describe = json.dumps(describe_values,indent=4, cls=NpEncoder)
-with open("./data/statistics_synthetic.json", "w") as outfile:
+with open("./data/statistics.json", "w") as outfile:
     outfile.write(json_describe)
 
 
-with open('./data/statistics_synthetic.json', 'r') as f:
+with open('./data/statistics.json', 'r') as f:
     data = json.load(f)
 
 for entry in data:
     print(data[entry])
-    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Kellgren', 'Extrusion', 'lysholm score post', 'Grado', 'Angulo']:
+    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
         result = data[entry]['freq'] / data[entry]['count']
         print("result")
         data[entry]['stability'] = result
 
-with open('./data/statistics_synthetic.json', 'w') as f:
+with open('./data/statistics.json', 'w') as f:
     json.dump(data, f, indent=4)

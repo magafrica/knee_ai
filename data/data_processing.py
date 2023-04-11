@@ -1,12 +1,12 @@
 import pandas as pd
 
-df = pd.read_excel("./data/ESTUDIO_MENISCOS.xlsx")
+df = pd.read_excel("./data/MENISCOS_FILTRADO.xlsx")
 df.rename( columns = {'\nNacionalidad': 'NACIONALIDAD', 'CIRUGÍA': 'Cirugia','TRAUMÁTICA': 'Traumatica',
        'DOLOR INTERLÍNEA': 'Dolor Interlinea', 'MCMURRAY +': 'MCMurray',
       'Anticoagulación': 'Anticoagulacion', 'Cáncer': 'Cancer', 
-       'Cirugía Previa meniscal':'Cirugia Previa Meniscal' , 'Espacio Intraarticular (mm)': 'Espacio Intraarticular (mm)',
+       'Cirugía Previa meniscal':'Cirugia Previa Meniscal' , 'Espacio Intraarticular (nm)': 'Espacio Intraarticular',
         'Ángulo 1': 'Angulo 1', 'Ángulo': 'Angulo', '\nLateralidad' : 'Lateralidad 2', '\nTipo de Rotura': 'Tipo de Rotura',
-        'Raíz Meniscal': 'Raiz Meniscal', '\nExtrusión ( mm )': 'Extrusion', '\nEdema óseo': 'Edema Oseo',
+        'Raíz Meniscal': 'Raiz Meniscal', '\nExtrusion ( mm )': 'Extrusion', '\nEdema óseo': 'Edema Oseo',
         '\n\nCondropatía ': 'Condropatia', '\nGrado': 'Grado', '\nZona': 'Zona Condropatia',
        '\nCondropatía Femoropatelar': 'Condropatia Femoropatelar'}, inplace=True)
 
@@ -119,7 +119,20 @@ df_new['Grado'] = df_new['Grado'].replace(['II', 'ii'], 2)
 df_new['Grado'] = df_new['Grado'].replace(['II-III', 'ii\niiI'], 2.5)
 df_new['Grado'] = df_new['Grado'].replace(['II-IV'], 3.5)
 df_new['Grado'] = df_new['Grado'].replace(['I-II'], 1.5)
+df_new['Grado'].fillna(value=0, inplace=True)
 #column_data['Grado'] = list(df_new['Grado'].describe())
+
+#COLUMNA Genu Varo
+df_new['Genu varo'].fillna(value='NO', inplace=True)
+
+#COLUMNA Angulo Genu Varu
+df.loc[df['Genu varo'] == 'NO', 'Angulo Genu Varo'] = 0
+
+#COLUMNA genu Valgo
+df.loc[df['Genu valgo'] == 'SI', 'Genu Valgo'] = 'NO'
+
+#COLUMNA Kellgren
+df_new['Kellgren'].fillna(value=0, inplace=True)
 
 #COLUMNA Tipo Edema
 df_new = df_new.replace('complee', 'COMPLETE')
@@ -131,10 +144,12 @@ df_new = df_new.replace('articular', 'ARTICULAR')
 df_new = df_new.replace('E', 'EDGE')
 df_new = df_new.replace('Full', 'FULL')
 
+df_new = df_new.replace('no tele', 0)
+df_new = df_new.replace(['no rx', 'no rx en carga'], 0)
 #Columna Zona
 df_new = df_new.replace(['cóndilo', 'CFI', 'CFE', 'condilo', 'compartimento interno'], 'CONDILO')
 df_new = df_new.replace(['meseta', 'Meseta interna', 'Meseta', 'meseta ', 'meseta interna\n', 'meseta interna'], 'MESETA')
-df_new = df_new.replace(['CFI + MTI'], 'AMBOS')
+df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo'], 'AMBOS')
 
 df_new.to_csv("./data/datos_procesados.csv", sep = ";", encoding="utf-8")
 

@@ -54,7 +54,7 @@ plt.xticks(category_order)
 plt.xlabel('Rango')
 plt.ylabel('Frecuencia')
 plt.title('Lysholm Score')
-plt.savefig("./data/graficas/lysholm_categories.png")
+#plt.savefig("./data/graficas/lysholm_categories.png")
 plt.show()
 
 #GRAFICA ESTABILIIDAD
@@ -65,7 +65,7 @@ column_name = []
 stability = []   
 for entry in data:
     print(data[entry])
-    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Kellgren', 'Extrusion', 'lysholm score post', 'Grado', 'Angulo']:
+    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
         column_name.append(entry)
         stability.append(data[entry]["stability"])
         

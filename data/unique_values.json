@@ -6,6 +6,7 @@
   "Sexo": [
     "MUJER",
     "HOMBRE",
+    "vARON",
     NaN
   ],
   "Lateralidad": [
@@ -16,25 +17,28 @@
   "Cirugia": [
     NaN,
     "SUTURA",
+    "SUTURA - REANCLAJE + PERFORACIONES",
     "MENISECTOMIA PARCIAL",
+    "MENISCECTOM\u00cdA PARCIAL",
+    "MENISCECTOMIA PARCIAL ",
     "MENISECTOMIA",
     "REANCLAJE RAIZ"
   ],
   "Traumatica": [
-    NaN,
+    "NO",
     "SI",
-    "NO"
+    NaN
   ],
   "Dolor Interlinea": [
-    NaN,
     "SI",
-    "NO"
+    "NO",
+    NaN
   ],
   "MCMurray": [
-    NaN,
-    "no concluyente",
+    "NO",
     "SI",
-    "NO"
+    "no concluyente",
+    NaN
   ],
   "HTA": [
     "NO",
@@ -110,14 +114,91 @@
     "SI"
   ],
   "Genu varo": [
+    "NO",
+    "SI"
+  ],
+  "Angulo Genu Varo": [
     NaN,
-    "SI",
-    "NO"
+    2.3,
+    5.76,
+    4.0,
+    3.0,
+    6.5,
+    2.17,
+    3.5,
+    5.4,
+    4.47,
+    3.6,
+    2.34,
+    0.97,
+    2.33,
+    3.53,
+    3.13,
+    2.0,
+    6.2,
+    1.37,
+    1.91,
+    3.37,
+    3.02,
+    1.86,
+    0.6,
+    3.97,
+    4.52,
+    5.58,
+    2.25,
+    0.0,
+    3.11,
+    2.92,
+    3.09,
+    3.74,
+    1.1,
+    5.49,
+    1.59,
+    3.73,
+    0.79,
+    0.89,
+    1.84,
+    1.3,
+    3.12,
+    6.0,
+    5.0,
+    10.0,
+    7.0,
+    8.0,
+    11.0,
+    1.8,
+    3.3
   ],
   "Genu valgo": [
     NaN,
     "SI",
     "NO"
+  ],
+  "Angulo Genu Valgo": [
+    NaN,
+    4.3,
+    3.87,
+    3.4,
+    6.4,
+    5.1,
+    2.75,
+    3.24,
+    6.86,
+    7.79,
+    6.84,
+    6.09,
+    11.8,
+    6.56,
+    7.0,
+    5.0,
+    13.0,
+    5.9
+  ],
+  "Kellgren": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
   ],
   "Lateralidad 2": [
     "MEDIAL",
@@ -142,7 +223,7 @@
     "DEGENERATIVA",
     "PICO DE LORO"
   ],
-  "Zona Menisco": [
+  "Zona": [
     "CUERNO POSTERIOR",
     NaN,
     "CUERPO",
@@ -159,7 +240,7 @@
     "NO",
     NaN
   ],
-  "Zona": [
+  "Zona.1": [
     "CONDILO",
     NaN,
     "MESETA",
@@ -179,6 +260,16 @@
     "NO",
     "SI",
     NaN
+  ],
+  "Grado": [
+    0.0,
+    3.0,
+    4.0,
+    2.0,
+    1.0,
+    1.5,
+    2.5,
+    3.5
   ],
   "Condropatia Femoropatelar": [
     "NO",

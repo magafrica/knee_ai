@@ -1,15 +1,15 @@
 {
     "Hospital": {
-        "count": 142,
+        "count": 146,
         "unique": 2,
         "top": "FJD",
-        "freq": 84,
-        "stability": 0.5915492957746479
+        "freq": 88,
+        "stability": 0.6027397260273972
     },
     "Edad": {
-        "count": 141.0,
-        "mean": 54.765957446808514,
-        "std": 5.957754008579719,
+        "count": 145.0,
+        "mean": 54.62758620689655,
+        "std": 5.998778611316327,
         "min": 45.0,
         "25%": 50.0,
         "50%": 54.0,
@@ -17,227 +17,231 @@
         "max": 70.0
     },
     "Sexo": {
-        "count": 141,
-        "unique": 2,
+        "count": 145,
+        "unique": 3,
         "top": "HOMBRE",
         "freq": 85,
-        "stability": 0.6028368794326241
+        "stability": 0.5862068965517241
     },
     "Lateralidad": {
-        "count": 141,
+        "count": 145,
         "unique": 2,
         "top": "DERECHA",
-        "freq": 74,
-        "stability": 0.524822695035461
+        "freq": 76,
+        "stability": 0.5241379310344828
     },
     "Cirugia": {
-        "count": 110,
-        "unique": 4,
+        "count": 136,
+        "unique": 7,
         "top": "MENISECTOMIA PARCIAL",
-        "freq": 80,
-        "stability": 0.7272727272727273
+        "freq": 92,
+        "stability": 0.6764705882352942
     },
     "Traumatica": {
-        "count": 64,
+        "count": 99,
         "unique": 2,
         "top": "NO",
-        "freq": 53,
-        "stability": 0.828125
+        "freq": 86,
+        "stability": 0.8686868686868687
     },
     "Dolor Interlinea": {
-        "count": 65,
+        "count": 100,
         "unique": 2,
         "top": "SI",
-        "freq": 58,
-        "stability": 0.8923076923076924
+        "freq": 86,
+        "stability": 0.86
     },
     "MCMurray": {
-        "count": 62,
+        "count": 97,
         "unique": 3,
         "top": "SI",
-        "freq": 53,
-        "stability": 0.8548387096774194
+        "freq": 80,
+        "stability": 0.8247422680412371
     },
     "IMC": {
-        "count": 121.0,
-        "mean": 27.531322314049593,
-        "std": 3.8958372960012837,
+        "count": 125.0,
+        "mean": 27.45504,
+        "std": 3.875185661317069,
         "min": 16.28,
         "25%": 25.0,
-        "50%": 27.36,
-        "75%": 30.19,
+        "50%": 27.34,
+        "75%": 30.08,
         "max": 37.1
     },
     "HTA": {
-        "count": 142,
+        "count": 146,
         "unique": 2,
         "top": "NO",
-        "freq": 105,
-        "stability": 0.7394366197183099
+        "freq": 108,
+        "stability": 0.7397260273972602
     },
     "C. Isquemica": {
-        "count": 142,
+        "count": 146,
         "unique": 2,
-        "top": "NO",
-        "freq": 138,
-        "stability": 0.971830985915493
-    },
-    "Arritmia": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 139,
-        "stability": 0.9788732394366197
-    },
-    "Dislipemia": {
-        "count": 141,
-        "unique": 2,
-        "top": "NO",
-        "freq": 109,
-        "stability": 0.7730496453900709
-    },
-    "Anticoagulacion": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 138,
-        "stability": 0.971830985915493
-    },
-    "Fumador": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 116,
-        "stability": 0.8169014084507042
-    },
-    "DM": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 131,
-        "stability": 0.9225352112676056
-    },
-    "Insulina": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 140,
-        "stability": 0.9859154929577465
-    },
-    "Cancer": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 139,
-        "stability": 0.9788732394366197
-    },
-    "Insuficiencia renal": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 141,
-        "stability": 0.9929577464788732
-    },
-    "SAOS": {
-        "count": 142,
-        "unique": 2,
-        "top": "NO",
-        "freq": 139,
-        "stability": 0.9788732394366197
-    },
-    "Parkinson": {
-        "count": 142,
-        "unique": 1,
         "top": "NO",
         "freq": 142,
-        "stability": 1.0
+        "stability": 0.9726027397260274
     },
-    "Sd. Ansioso depresivo": {
-        "count": 142,
+    "Arritmia": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 143,
+        "stability": 0.9794520547945206
+    },
+    "Dislipemia": {
+        "count": 145,
+        "unique": 2,
+        "top": "NO",
+        "freq": 113,
+        "stability": 0.7793103448275862
+    },
+    "Anticoagulacion": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 142,
+        "stability": 0.9726027397260274
+    },
+    "Fumador": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 120,
+        "stability": 0.821917808219178
+    },
+    "DM": {
+        "count": 146,
         "unique": 2,
         "top": "NO",
         "freq": 134,
-        "stability": 0.9436619718309859
+        "stability": 0.9178082191780822
     },
-    "Fibromialgia": {
-        "count": 142,
+    "Insulina": {
+        "count": 146,
         "unique": 2,
         "top": "NO",
-        "freq": 141,
-        "stability": 0.9929577464788732
+        "freq": 143,
+        "stability": 0.9794520547945206
     },
-    "Cirugia Previa LCA": {
-        "count": 142,
+    "Cancer": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 143,
+        "stability": 0.9794520547945206
+    },
+    "Insuficiencia renal": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 145,
+        "stability": 0.9931506849315068
+    },
+    "SAOS": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 143,
+        "stability": 0.9794520547945206
+    },
+    "Parkinson": {
+        "count": 146,
         "unique": 1,
         "top": "NO",
-        "freq": 142,
+        "freq": 146,
         "stability": 1.0
     },
-    "Cirugia Previa Meniscal": {
-        "count": 142,
+    "Sd. Ansioso depresivo": {
+        "count": 146,
         "unique": 2,
         "top": "NO",
         "freq": 138,
-        "stability": 0.971830985915493
+        "stability": 0.9452054794520548
+    },
+    "Fibromialgia": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 145,
+        "stability": 0.9931506849315068
+    },
+    "Cirugia Previa LCA": {
+        "count": 146,
+        "unique": 1,
+        "top": "NO",
+        "freq": 146,
+        "stability": 1.0
+    },
+    "Cirugia Previa Meniscal": {
+        "count": 146,
+        "unique": 2,
+        "top": "NO",
+        "freq": 141,
+        "stability": 0.9657534246575342
     },
     "Espacio Intraarticular (mm)": {
-        "count": 115.0,
-        "mean": 4.742782608695652,
-        "std": 1.7488354761102904,
+        "count": 117.0,
+        "mean": 4.754957264957263,
+        "std": 1.7361772434206613,
         "min": 0.0,
-        "25%": 4.02,
+        "25%": 4.04,
         "50%": 5.0,
         "75%": 6.0,
         "max": 8.6
     },
     "Esclerosis subcondral": {
-        "count": 110,
+        "count": 112,
         "unique": 2,
         "top": "SI",
-        "freq": 64,
-        "stability": 0.5818181818181818
+        "freq": 65,
+        "stability": 0.5803571428571429
     },
     "Osteofito": {
-        "count": 108,
+        "count": 110,
         "unique": 2,
         "top": "NO",
-        "freq": 90,
-        "stability": 0.8333333333333334
+        "freq": 92,
+        "stability": 0.8363636363636363
     },
     "Genu varo": {
-        "count": 94,
+        "count": 146,
         "unique": 2,
-        "top": "SI",
-        "freq": 64,
-        "stability": 0.6808510638297872
+        "top": "NO",
+        "freq": 81,
+        "stability": 0.5547945205479452
     },
-    "Angulo 1": {
-        "count": 61,
-        "unique": 49,
-        "top": "3",
-        "freq": 4
+    "Angulo Genu Varo": {
+        "count": 62.0,
+        "mean": 3.528387096774194,
+        "std": 2.289800043921358,
+        "min": 0.0,
+        "25%": 2.0,
+        "50%": 3.0999999999999996,
+        "75%": 4.88,
+        "max": 11.0
     },
     "Genu valgo": {
-        "count": 53,
+        "count": 54,
         "unique": 2,
         "top": "NO",
         "freq": 36,
-        "stability": 0.6792452830188679
+        "stability": 0.6666666666666666
     },
-    "Angulo": {
-        "count": 17.0,
-        "mean": 6.441176470588236,
-        "std": 2.6544441093026925,
+    "Angulo Genu Valgo": {
+        "count": 18.0,
+        "mean": 6.263333333333334,
+        "std": 2.683450368900633,
         "min": 2.75,
-        "25%": 5.0,
-        "50%": 6.4,
-        "75%": 6.86,
+        "25%": 4.475,
+        "50%": 6.245,
+        "75%": 6.855,
         "max": 13.0
     },
     "Kellgren": {
-        "count": 108.0,
-        "mean": 0.8981481481481481,
-        "std": 0.696316272737311,
+        "count": 146.0,
+        "mean": 0.6712328767123288,
+        "std": 0.7154414026087946,
         "min": 0.0,
         "25%": 0.0,
         "50%": 1.0,
@@ -245,116 +249,116 @@
         "max": 3.0
     },
     "Lateralidad 2": {
-        "count": 139,
+        "count": 143,
         "unique": 8,
         "top": "INTERNO",
-        "freq": 66,
-        "stability": 0.4748201438848921
+        "freq": 69,
+        "stability": 0.4825174825174825
     },
     "Tipo de Rotura": {
-        "count": 137,
+        "count": 141,
         "unique": 9,
         "top": "COMPLEJA",
-        "freq": 48,
-        "stability": 0.35036496350364965
+        "freq": 49,
+        "stability": 0.3475177304964539
     },
-    "Zona Menisco": {
-        "count": 135,
+    "Zona": {
+        "count": 139,
         "unique": 4,
         "top": "CUERNO POSTERIOR",
-        "freq": 89,
-        "stability": 0.6592592592592592
+        "freq": 92,
+        "stability": 0.6618705035971223
     },
     "Raiz Meniscal": {
-        "count": 134,
+        "count": 137,
         "unique": 2,
         "top": "NO",
-        "freq": 103,
-        "stability": 0.7686567164179104
+        "freq": 105,
+        "stability": 0.7664233576642335
     },
     "Extrusion": {
-        "count": 127.0,
-        "mean": 2.2407086614173224,
-        "std": 1.8036225369289525,
+        "count": 130.0,
+        "mean": 2.224153846153846,
+        "std": 1.7945826249725334,
         "min": 0.0,
         "25%": 0.0,
-        "50%": 2.32,
-        "75%": 3.525,
+        "50%": 2.315,
+        "75%": 3.4725,
         "max": 6.54
     },
     "Edema Oseo": {
-        "count": 126,
+        "count": 129,
         "unique": 2,
         "top": "NO",
-        "freq": 83,
-        "stability": 0.6587301587301587
+        "freq": 85,
+        "stability": 0.6589147286821705
     },
-    "Zona": {
-        "count": 44,
+    "Zona.1": {
+        "count": 45,
         "unique": 5,
         "top": "CONDILO",
         "freq": 20,
-        "stability": 0.45454545454545453
+        "stability": 0.4444444444444444
     },
     "tipo edema": {
-        "count": 41,
+        "count": 42,
         "unique": 5,
         "top": "EDGE",
-        "freq": 25,
-        "stability": 0.6097560975609756
+        "freq": 26,
+        "stability": 0.6190476190476191
     },
     "Condropatia": {
-        "count": 137,
+        "count": 140,
         "unique": 2,
         "top": "SI",
-        "freq": 104,
-        "stability": 0.7591240875912408
+        "freq": 107,
+        "stability": 0.7642857142857142
     },
     "Grado": {
-        "count": 104.0,
-        "mean": 2.769230769230769,
-        "std": 0.821208784998447,
-        "min": 1.0,
-        "25%": 2.0,
-        "50%": 3.0,
+        "count": 146.0,
+        "mean": 2.006849315068493,
+        "std": 1.41419686159472,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 2.0,
         "75%": 3.0,
         "max": 4.0
     },
     "Condropatia Femoropatelar": {
-        "count": 141,
+        "count": 144,
         "unique": 2,
         "top": "SI",
-        "freq": 84,
-        "stability": 0.5957446808510638
+        "freq": 87,
+        "stability": 0.6041666666666666
     },
     "LCA": {
-        "count": 139,
+        "count": 142,
         "unique": 2,
         "top": "NO",
-        "freq": 134,
-        "stability": 0.9640287769784173
+        "freq": 137,
+        "stability": 0.9647887323943662
     },
     "Quiste baker": {
-        "count": 138,
+        "count": 141,
         "unique": 2,
         "top": "NO",
-        "freq": 95,
-        "stability": 0.6884057971014492
+        "freq": 96,
+        "stability": 0.6808510638297872
     },
     "Quiste parameniscal": {
-        "count": 138,
+        "count": 141,
         "unique": 2,
         "top": "NO",
-        "freq": 123,
-        "stability": 0.8913043478260869
+        "freq": 125,
+        "stability": 0.8865248226950354
     },
     "lysholm score post": {
-        "count": 142.0,
-        "mean": 72.01408450704226,
-        "std": 23.806246845570605,
+        "count": 146.0,
+        "mean": 72.45890410958904,
+        "std": 23.643655331006485,
         "min": 16.0,
         "25%": 55.0,
-        "50%": 76.5,
+        "50%": 79.0,
         "75%": 95.0,
         "max": 100.0
     }
