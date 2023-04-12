@@ -127,6 +127,7 @@ df_new['Genu varo'].fillna(value='NO', inplace=True)
 
 #COLUMNA Angulo Genu Varu
 df.loc[df['Genu varo'] == 'NO', 'Angulo Genu Varo'] = 0
+df_new['Angulo Genu Varo'].fillna(value= 0, inplace=True)
 
 #COLUMNA genu Valgo
 df.loc[df['Genu valgo'] == 'SI', 'Genu Valgo'] = 'NO'
