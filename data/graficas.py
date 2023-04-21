@@ -3,7 +3,13 @@ import matplotlib.pyplot as plt
 import json
 import numpy as np
 
-df = pd.read_csv('./data/datos_procesados.csv', delimiter=';')
+DATASETS_PATH = "./data/datasets/"
+FILENAME_TO_READ = "datos_procesados.csv"
+JSON_PATH = "./data/JSON/"
+UNIQUE_VALUES = "unique_values.json"
+STATISCICS = "statistics_values.json"
+
+df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, delimiter=';')
 df_to_plot = df.drop(columns=["Unnamed: 0", "NHC", 'lysholm score post'])
 
 
@@ -58,7 +64,7 @@ plt.title('Lysholm Score')
 plt.show()
 
 #GRAFICA ESTABILIIDAD
-with open('./data/statistics.json', 'r') as f:
+with open(JSON_PATH + STATISCICS, 'r') as f:
     data = json.load(f)
     
 column_name = []
