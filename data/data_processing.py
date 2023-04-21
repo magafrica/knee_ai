@@ -28,21 +28,12 @@ df = df.drop(columns = ['NACIONALIDAD', 'Trabajo', 'Zona Condropatia', 'Dolor en
 ######################################################## UNIFY VALUES ########################################################
 #COLUMNA SEXO
 df_new = df.replace(['mujer', 'MUJER ', 'Mujer'], 'MUJER')
-df_new = df_new.replace('varón', 'HOMBRE')
-df_new = df_new.replace('Varón', 'HOMBRE')
-df_new = df_new.replace('VARÓN', 'HOMBRE')
-df_new = df_new.replace('VARON', 'HOMBRE')
-df_new = df_new.replace('varon', 'HOMBRE')
-df_new = df_new.replace('Varon', 'HOMBRE')
-df_new = df_new.replace('hombre', 'HOMBRE')
+df_new = df_new.replace(['varón', 'Varón', 'VARÓN', 'VARON', 'VARON', 'varon', 'Varon', 'hombre'], 'HOMBRE')
 
 
 #COLUMNA LATERALIDAD
-df_new = df_new.replace('derecha', 'DERECHA')
-df_new = df_new.replace('Derecha', 'DERECHA')
-df_new = df_new.replace('izquierda', 'IZQUIERDA')
-df_new = df_new.replace('Izquierda ', 'IZQUIERDA')
-df_new = df_new.replace('Izquierda', 'IZQUIERDA')
+df_new = df_new.replace(['derecha', 'Derecha'], 'DERECHA')
+df_new = df_new.replace(['izquierda','Izquierda ', 'Izquierda'], 'IZQUIERDA')
 
 #COLUMNA CIRUGÍA
 df_new = df_new.replace('MENISCECTOMIA PARCIAL', 'MENISECTOMIA PARCIAL')
@@ -126,21 +117,14 @@ df_new['Grado'] = df_new['Grado'].replace(['II', 'ii'], 2)
 df_new['Grado'] = df_new['Grado'].replace(['II-III', 'ii\niiI'], 2.5)
 df_new['Grado'] = df_new['Grado'].replace(['II-IV'], 3.5)
 df_new['Grado'] = df_new['Grado'].replace(['I-II'], 1.5)
-df_new['Grado'].fillna(value=0, inplace=True)
-#column_data['Grado'] = list(df_new['Grado'].describe())
 
-#COLUMNA Genu Varo
-df_new['Genu varo'].fillna(value='NO', inplace=True)
 
 #COLUMNA Angulo Genu Varu
 df.loc[df['Genu varo'] == 'NO', 'Angulo Genu Varo'] = 0
-df_new['Angulo Genu Varo'].fillna(value= 0, inplace=True)
+
 
 #COLUMNA genu Valgo
 df.loc[df['Genu valgo'] == 'SI', 'Genu Valgo'] = 'NO'
-
-#COLUMNA Kellgren
-df_new['Kellgren'].fillna(value=0, inplace=True)
 
 #COLUMNA Tipo Edema
 df_new = df_new.replace('complee', 'COMPLETE')
@@ -158,6 +142,16 @@ df_new = df_new.replace(['no rx', 'no rx en carga'], 0)
 df_new = df_new.replace(['cóndilo', 'CFI', 'CFE', 'condilo', 'compartimento interno'], 'CONDILO')
 df_new = df_new.replace(['meseta', 'Meseta interna', 'Meseta', 'meseta ', 'meseta interna\n', 'meseta interna'], 'MESETA')
 df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo'], 'AMBOS')
+
+######################################################## FILL NANS ########################################################
+#COLUMNA Kellgren
+df_new['Kellgren'].fillna(value=0, inplace=True)
+df_new['Angulo Genu Varo'].fillna(value= 0, inplace=True)
+df_new['Grado'].fillna(value=0, inplace=True)
+
+
+#COLUMNA Genu Varo. Esta se tiene que hacer así! 
+df_new['Genu varo'].fillna(value='NO', inplace=True)
 
 df_new.to_csv(DATASETS_PATH + FILENAME_TO_SAVE, sep = ";", encoding="utf-8")
 
