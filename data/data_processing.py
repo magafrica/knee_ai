@@ -1,6 +1,13 @@
 import pandas as pd
 
-df = pd.read_excel("./data/MENISCOS_FILTRADO.xlsx")
+DATASETS_PATH = "./data/datasets/"
+FILENAME_TO_READ = "MENISCOS_FILTRADO.xlsx"
+FILENAME_TO_SAVE = "datos_procesados.csv"
+df = pd.read_excel(DATASETS_PATH + FILENAME_TO_READ)
+
+
+######################################################## RENAME INVALID NAME COLUMNS ########################################################
+                                                 
 df.rename( columns = {'\nNacionalidad': 'NACIONALIDAD', 'CIRUGÍA': 'Cirugia','TRAUMÁTICA': 'Traumatica',
        'DOLOR INTERLÍNEA': 'Dolor Interlinea', 'MCMURRAY +': 'MCMurray',
       'Anticoagulación': 'Anticoagulacion', 'Cáncer': 'Cancer', 
@@ -17,10 +24,10 @@ df = df.drop(columns = ['NACIONALIDAD', 'Trabajo', 'Zona Condropatia', 'Dolor en
        'tiempo desde fracaso (meses)', 'Unnamed: 63', 'RMN POST',
        'Unnamed: 65', 'SUTURA VS MENISCECTOMIA', 'fecha de cirugía', 'Incorporación vida laboral', 'Deporte', 'satisfecho con la cirugía (1-4)', 'dolor actual 0-10', 'mejora con la cirugía'] )       
 
+
+######################################################## UNIFY VALUES ########################################################
 #COLUMNA SEXO
-df_new = df.replace('mujer', 'MUJER')
-df_new = df_new.replace('MUJER ', 'MUJER')
-df_new = df_new.replace('Mujer', 'MUJER')
+df_new = df.replace(['mujer', 'MUJER ', 'Mujer'], 'MUJER')
 df_new = df_new.replace('varón', 'HOMBRE')
 df_new = df_new.replace('Varón', 'HOMBRE')
 df_new = df_new.replace('VARÓN', 'HOMBRE')
@@ -152,5 +159,5 @@ df_new = df_new.replace(['cóndilo', 'CFI', 'CFE', 'condilo', 'compartimento int
 df_new = df_new.replace(['meseta', 'Meseta interna', 'Meseta', 'meseta ', 'meseta interna\n', 'meseta interna'], 'MESETA')
 df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo'], 'AMBOS')
 
-df_new.to_csv("./data/datos_procesados.csv", sep = ";", encoding="utf-8")
+df_new.to_csv(DATASETS_PATH + FILENAME_TO_SAVE, sep = ";", encoding="utf-8")
 
