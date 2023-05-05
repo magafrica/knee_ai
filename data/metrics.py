@@ -30,6 +30,7 @@ df.drop(columns=["Unnamed: 0", "NHC"], inplace=True)
 #Unique values JSON
 unique_values = {}
 for col in df:
+       #estoy quitando datos numericos 
        if col not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular (mm)', 'Extrusion', 'lysholm score post', 'Angulo']:
               content = df[col].unique()
               content = content.tolist()
@@ -55,7 +56,7 @@ with open(JSON_PATH + STATISCICS, 'r') as f:
     data = json.load(f)
 columns_to_delete = []
 for entry in data:
-    print(data[entry])
+    #quitando datos numéricos
     if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
         result = data[entry]['freq'] / data[entry]['count']
         data[entry]['stability'] = result

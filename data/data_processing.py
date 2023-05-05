@@ -13,7 +13,7 @@ df.rename( columns = {'\nNacionalidad': 'NACIONALIDAD', 'CIRUGÍA': 'Cirugia','T
       'Anticoagulación': 'Anticoagulacion', 'Cáncer': 'Cancer', 
        'Cirugía Previa meniscal':'Cirugia Previa Meniscal' , 'Espacio Intraarticular (nm)': 'Espacio Intraarticular',
         'Ángulo 1': 'Angulo 1', 'Ángulo': 'Angulo', '\nLateralidad' : 'Lateralidad 2', '\nTipo de Rotura': 'Tipo de Rotura',
-        'Raíz Meniscal': 'Raiz Meniscal', '\nExtrusion ( mm )': 'Extrusion', '\nEdema óseo': 'Edema Oseo',
+        'Raíz Meniscal': 'Raiz Meniscal', '\nExtrusión ( mm )': 'Extrusion', '\nEdema óseo': 'Edema Oseo',
         '\n\nCondropatía ': 'Condropatia', '\nGrado': 'Grado', '\nZona': 'Zona Condropatia',
        '\nCondropatía Femoropatelar': 'Condropatia Femoropatelar'}, inplace=True)
 
@@ -28,16 +28,16 @@ df = df.drop(columns = ['NACIONALIDAD', 'Trabajo', 'Zona Condropatia', 'Dolor en
 ######################################################## UNIFY VALUES ########################################################
 #COLUMNA SEXO
 df_new = df.replace(['mujer', 'MUJER ', 'Mujer'], 'MUJER')
-df_new = df_new.replace(['varón', 'Varón', 'VARÓN', 'VARON', 'VARON', 'varon', 'Varon', 'hombre'], 'HOMBRE')
+df_new = df_new.replace(['varón', 'Varón', 'VARÓN', 'VARON', 'VARON', 'varon', 'Varon', 'hombre', 'vARON'], 'HOMBRE')
 
 
 #COLUMNA LATERALIDAD
 df_new = df_new.replace(['derecha', 'Derecha'], 'DERECHA')
-df_new = df_new.replace(['izquierda','Izquierda ', 'Izquierda'], 'IZQUIERDA')
+df_new = df_new.replace(['izquierda','Izquierda ', 'Izquierda', 'IZQUIERDA '], 'IZQUIERDA')
 
 #COLUMNA CIRUGÍA
-df_new = df_new.replace('MENISCECTOMIA PARCIAL', 'MENISECTOMIA PARCIAL')
-df_new = df_new.replace('sutura', 'SUTURA')
+df_new = df_new.replace('MENISCECTOMIA PARCIAL', 'MENISECTOMIA')
+df_new = df_new.replace(['sutura',"SUTURA "], 'SUTURA')
 df_new = df_new.replace('SUTURA - REANCLAJE', 'SUTURA')
 df_new = df_new.replace('desbridamiento lesiones condrales', 'SUTURA')
 df_new = df_new.replace('SUTURA A MURO', 'SUTURA')
@@ -45,10 +45,12 @@ df_new= df_new.replace('menisectomía', 'MENISECTOMIA')
 df_new= df_new.replace('menisectomia', 'MENISECTOMIA')
 df_new= df_new.replace('meniscectomia', 'MENISECTOMIA')
 df_new= df_new.replace('meniscectomía', 'MENISECTOMIA')
-df_new = df_new.replace('MENISECTOMÍA PARCIAL', 'MENISECTOMIA PARCIAL')
-df_new = df_new.replace('menisectomia parcial', 'MENISECTOMIA PARCIAL')
-df_new = df_new.replace('meniscectomia parcial', 'MENISECTOMIA PARCIAL')
-df_new = df_new.replace('menisectomía parcial', 'MENISECTOMIA PARCIAL')
+df_new = df_new.replace('MENISECTOMÍA PARCIAL', 'MENISECTOMIA')
+df_new = df_new.replace('menisectomia parcial', 'MENISECTOMIA')
+df_new = df_new.replace('meniscectomia parcial', 'MENISECTOMIA')
+df_new = df_new.replace(['menisectomía parcial', 'MENISCECTOMÍA SUBTOTAL', 'MENISCECTOMÍA PARCIAL', "MENISECTOMIA",
+    "MENISCECTOMIA PARCIAL ","MENISECTOMIA PARCIAL"], 'MENISECTOMIA')
+df_new = df_new.replace(['REANCLAJE RAÍZ'], 'REANCLAJE RAIZ')
 
 #SIES Y NOES
 df_new = df_new.replace(['si', 'Si', 'si ', 'SI ', ' SI', '+', 'sí', 'Sí', 'Si ', 'PARCIAL'], 'SI')
@@ -80,12 +82,12 @@ df_new = df_new.replace('Degenerativa ', 'DEGENERATIVA')
 df_new = df_new.replace('raiz + asa de cubo', 'COMPLEJA')
 df_new = df_new.replace('radial', 'RADIAL')
 df_new = df_new.replace('Radial', 'RADIAL')
-df_new = df_new.replace('asa DE CUBO', 'ASA DE CUBO')
-df_new = df_new.replace('Asa de cubo', 'ASA DE CUBO')
-df_new = df_new.replace('asa de cubo', 'ASA DE CUBO')
+df_new = df_new.replace('asa DE CUBO', 'VERTICAL')
+df_new = df_new.replace('Asa de cubo', 'VERTICAL')
+df_new = df_new.replace('asa de cubo', 'VERTICAL')
 df_new = df_new.replace('Horizontal', 'HORIZONTAL')
-df_new = df_new.replace('pico de loro', 'PICO DE LORO')
-df_new = df_new.replace('Pico de loro', 'PICO DE LORO')
+df_new = df_new.replace('pico de loro', 'HORIZONTAL')
+df_new = df_new.replace(['Pico de loro',"PICO DE LORO"], 'HORIZONTAL')
 
 #COLUMNA Zona Menisco
 df_new = df_new.replace('Cuerno posterior', 'CUERNO POSTERIOR')
@@ -101,7 +103,7 @@ df_new = df_new.replace('CAME y cuerpo', 'DOS')
 df_new = df_new.replace('Cuerno posterior ME', 'DOS')
 df_new = df_new.replace('cuerno posterior y cuerpo', 'DOS')
 df_new = df_new.replace('cuerpo y cuerno posterior', 'DOS')
-df_new = df_new.replace('Cuerpo-cuerno posterior', 'DOS')
+df_new = df_new.replace(['Cuerpo-cuerno posterior',"CUERPO Y CUERNO POSTERIOR"], 'DOS')
 
 #COLUMNA Extrusion
 df_new = df_new.replace('o,3', 0.3)
@@ -117,6 +119,7 @@ df_new['Grado'] = df_new['Grado'].replace(['II', 'ii'], 2)
 df_new['Grado'] = df_new['Grado'].replace(['II-III', 'ii\niiI'], 2.5)
 df_new['Grado'] = df_new['Grado'].replace(['II-IV'], 3.5)
 df_new['Grado'] = df_new['Grado'].replace(['I-II'], 1.5)
+df_new['Grado'] = df_new['Grado'].replace(['III-IV'], 3.5)
 
 
 #COLUMNA Angulo Genu Varu
@@ -141,7 +144,7 @@ df_new = df_new.replace(['no rx', 'no rx en carga'], 0)
 #Columna Zona
 df_new = df_new.replace(['cóndilo', 'CFI', 'CFE', 'condilo', 'compartimento interno'], 'CONDILO')
 df_new = df_new.replace(['meseta', 'Meseta interna', 'Meseta', 'meseta ', 'meseta interna\n', 'meseta interna'], 'MESETA')
-df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo'], 'AMBOS')
+df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo', "CONDILO-MESETA"], 'AMBOS')
 
 ######################################################## FILL NANS ########################################################
 #COLUMNA Kellgren
