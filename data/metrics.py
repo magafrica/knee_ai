@@ -17,8 +17,10 @@ class NpEncoder(json.JSONEncoder):
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
 FILENAME_TO_READ = "datos_procesados.csv"
+FILENAME_TO_SAVE = "datos_procesados_stability.csv"
 UNIQUE_VALUES = "unique_values.json"
 STATISCICS = "statistics_values.json"
+STABILITY_THRESHOLD = 0.8
 
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, delimiter=';')
 
@@ -51,12 +53,17 @@ with open(JSON_PATH + STATISCICS, "w") as outfile:
 
 with open(JSON_PATH + STATISCICS, 'r') as f:
     data = json.load(f)
-
+columns_to_delete = []
 for entry in data:
     print(data[entry])
     if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
         result = data[entry]['freq'] / data[entry]['count']
         data[entry]['stability'] = result
+        if STABILITY_THRESHOLD < result:
+            columns_to_delete.append(entry)
 
 with open(JSON_PATH + STATISCICS, 'w') as f:
     json.dump(data, f, indent=4)
+    
+df_stability = df.drop(columns=columns_to_delete)
+df_stability.to_csv(DATASETS_PATH + FILENAME_TO_SAVE, sep = ";", encoding="utf-8")

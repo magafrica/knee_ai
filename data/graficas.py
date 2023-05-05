@@ -4,13 +4,14 @@ import json
 import numpy as np
 
 DATASETS_PATH = "./data/datasets/"
-FILENAME_TO_READ = "datos_procesados.csv"
+FILENAME_TO_READ = "datos_procesados_stability.csv"
 JSON_PATH = "./data/JSON/"
 UNIQUE_VALUES = "unique_values.json"
 STATISCICS = "statistics_values.json"
+SAVEFIG = False
 
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, delimiter=';')
-df_to_plot = df.drop(columns=["Unnamed: 0", "NHC", 'lysholm score post'])
+df_to_plot = df.drop(columns=['lysholm score post'])
 
 
 
@@ -28,7 +29,8 @@ colors = np.where(missing_value_df['Porcentaje'] >= threshold, '#d34040', '#4090
 #print(missing_value_df)
 missing_value_df.plot(x='column_name', y='Porcentaje', kind='barh', color=colors)
 plt.title('Porcentaje de valores sin rellenar')
-plt.savefig('./data/graficas/Missing_values.png')
+if SAVEFIG:
+       plt.savefig('./data/graficas/Missing_values.png')
 plt.show()
 
 lysholm_score_list = list(df["lysholm score post"])
@@ -60,7 +62,8 @@ plt.xticks(category_order)
 plt.xlabel('Rango')
 plt.ylabel('Frecuencia')
 plt.title('Lysholm Score')
-#plt.savefig("./data/graficas/lysholm_categories.png")
+if SAVEFIG:
+       plt.savefig("./data/graficas/lysholm_categories.png")
 plt.show()
 
 #GRAFICA ESTABILIIDAD
@@ -82,15 +85,16 @@ stability_value_df = pd.DataFrame({'column_name': column_name,
             
 #print(missing_value_df)
 # Establecer umbral
-threshold = 0.85
+STABILITY_THRESHOLD = 0.85
 
 # Asignar colores basado en el umbral
-colors = np.where(stability_value_df['Estabilidad'] >= threshold, '#d34040', '#4090d3')
+colors = np.where(stability_value_df['Estabilidad'] >= STABILITY_THRESHOLD, '#d34040', '#4090d3')
 
 # Graficar
 stability_value_df.plot(x='column_name', y='Estabilidad', kind='barh', color=colors)
 
 # Mostrar la grafica
 plt.title('Estabilidad de los Atributos')
-plt.savefig('./data/graficas/Stability_values.png')
+if SAVEFIG:
+       plt.savefig('./data/graficas/Stability_values.png')
 plt.show()
