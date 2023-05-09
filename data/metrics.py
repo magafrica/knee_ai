@@ -16,10 +16,10 @@ class NpEncoder(json.JSONEncoder):
 #LEER ARCHIVO NUEVO
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_READ = "datos_procesados.csv"
+FILENAME_TO_READ = "datos_sinteticos.csv"
 FILENAME_TO_SAVE = "datos_procesados_stability.csv"
-UNIQUE_VALUES = "unique_values.json"
-STATISCICS = "statistics_values.json"
+UNIQUE_VALUES = "unique_values_sinteticos.json"
+STATISCICS = "statistics_values_sinteticos.json"
 STABILITY_THRESHOLD = 0.8
 
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, delimiter=';')

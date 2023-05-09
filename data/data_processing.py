@@ -147,11 +147,11 @@ df_new = df_new.replace(['meseta', 'Meseta interna', 'Meseta', 'meseta ', 'meset
 df_new = df_new.replace(['CFI + MTI', 'TIBIA + cóndilo', "CONDILO-MESETA"], 'AMBOS')
 
 ######################################################## FILL NANS ########################################################
+       
 #COLUMNA Kellgren
 df_new['Kellgren'].fillna(value=0, inplace=True)
 df_new['Angulo Genu Varo'].fillna(value= 0, inplace=True)
 df_new['Grado'].fillna(value=0, inplace=True)
-
 
 #COLUMNA Genu Varo. Esta se tiene que hacer así! 
 df_new['Genu varo'].fillna(value='NO', inplace=True)
