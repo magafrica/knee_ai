@@ -5,10 +5,11 @@ FILL_NANS= 1  #0 = fill with "unknown", 1 = fill with majority
 STABILITY_THRESHOLD = 0.7
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_READ = "datos_sinteticos.csv"
-STATISCICS = "statistics_values_sinteticos.json"
+FILENAME_TO_READ = "datos_sinteticos_version1.csv"
+STATISCICS = "statistics_values_sinteticos_version1.json"
 JSON_PATH = "./data/JSON/"
-
+FILENAME_TO_SAVE="sinteticos_version1_procesados.csv"
+"""
 
 if FILL_NANS == 0:
     if STABILITY_THRESHOLD == 0.7:
@@ -23,7 +24,8 @@ if FILL_NANS == 1:
     if STABILITY_THRESHOLD == 0.8:
         FILENAME_TO_SAVE = "sinteticos_mayoria_8.csv"
     if STABILITY_THRESHOLD == 0.9:
-        FILENAME_TO_SAVE = "sinteticos_mayoria_9.csv"
+        FILENAME_TO_SAVE = "sinteticos_mayoria_9.csv" 
+"""
     
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
 if FILL_NANS == 0:
@@ -39,7 +41,7 @@ with open(JSON_PATH + STATISCICS, 'r') as f:
 columns_to_delete = []
 for entry in data:
     #quitando datos numéricos
-    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
+    if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)', 'Unnamed: 0.1', 'Angulo']:
         if STABILITY_THRESHOLD < data[entry]['stability']:
             columns_to_delete.append(entry)
    

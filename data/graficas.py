@@ -4,7 +4,7 @@ import json
 import numpy as np
 
 DATASETS_PATH = "./data/datasets/"
-FILENAME_TO_READ = "prueba.csv"
+FILENAME_TO_READ = "datos_sinteticos_version1.csv"
 JSON_PATH = "./data/JSON/"
 UNIQUE_VALUES = "unique_values.json"
 STATISCICS = "statistics_values.json"

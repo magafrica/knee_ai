@@ -16,10 +16,10 @@ class NpEncoder(json.JSONEncoder):
 #LEER ARCHIVO NUEVO
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_READ = "datos_sinteticos.csv"
+FILENAME_TO_READ = "sinteticos_version1_procesados.csv"
 FILENAME_TO_SAVE = "datos_procesados_stability.csv"
-UNIQUE_VALUES = "unique_values_sinteticos.json"
-STATISCICS = "statistics_values_sinteticos.json"
+UNIQUE_VALUES = "unique_values_sinteticos_version1.json"
+STATISCICS = "statistics_values_sinteticos_version1.json"
 STABILITY_THRESHOLD = 0.8
 
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, delimiter=';')
@@ -58,6 +58,7 @@ columns_to_delete = []
 for entry in data:
     #quitando datos numéricos
     if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
+        print(entry)
         result = data[entry]['freq'] / data[entry]['count']
         data[entry]['stability'] = result
         if STABILITY_THRESHOLD < result:
