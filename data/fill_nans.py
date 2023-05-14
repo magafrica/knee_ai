@@ -5,11 +5,9 @@ FILL_NANS= 1  #0 = fill with "unknown", 1 = fill with majority
 STABILITY_THRESHOLD = 0.7
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_READ = "datos_sinteticos_version1.csv"
-STATISCICS = "statistics_values_sinteticos_version1.json"
+FILENAME_TO_READ = "datos_sinteticos_tabularlstm.csv"
+STATISCICS = "statistics_values_sinteticos.json"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_SAVE="sinteticos_version1_procesados.csv"
-"""
 
 if FILL_NANS == 0:
     if STABILITY_THRESHOLD == 0.7:
@@ -25,9 +23,10 @@ if FILL_NANS == 1:
         FILENAME_TO_SAVE = "sinteticos_mayoria_8.csv"
     if STABILITY_THRESHOLD == 0.9:
         FILENAME_TO_SAVE = "sinteticos_mayoria_9.csv" 
-"""
+
     
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
+df.drop(columns=["NHC"], inplace=True)
 if FILL_NANS == 0:
     for col in df:
         df[col].fillna(value="unknown", inplace=True)
