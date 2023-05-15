@@ -2,10 +2,10 @@ import pandas as pd
 import json
 
 FILL_NANS= 1  #0 = fill with "unknown", 1 = fill with majority
-STABILITY_THRESHOLD = 0.7
+STABILITY_THRESHOLD = 0.9
 DATASETS_PATH = "./data/datasets/"
 JSON_PATH = "./data/JSON/"
-FILENAME_TO_READ = "datos_sinteticos_tabularlstm.csv"
+FILENAME_TO_READ ="datos_sinteticos_tabularlstm.csv"
 STATISCICS = "statistics_values_sinteticos.json"
 JSON_PATH = "./data/JSON/"
 
@@ -28,10 +28,12 @@ if FILL_NANS == 1:
 df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
 df.drop(columns=["NHC"], inplace=True)
 if FILL_NANS == 0:
+    df["Extrusion"].replace(['NO MR'], "unknown", inplace=True)
     for col in df:
         df[col].fillna(value="unknown", inplace=True)
         
 if FILL_NANS == 1:
+    df["Extrusion"].replace(['NO MR'],df["Extrusion"].mode().iloc[0], inplace=True)
     for col in df:
         df[col].fillna(df[col].mode().iloc[0], inplace=True)
 
@@ -45,4 +47,7 @@ for entry in data:
             columns_to_delete.append(entry)
    
 df = df.drop(columns=columns_to_delete)
+
+df["Extrusion"] = df["Extrusion"].astype(float)
+df["lysholm score post"] = df["lysholm score post"].astype(float)
 df.to_csv(DATASETS_PATH + FILENAME_TO_SAVE, sep = ";", encoding="utf-8")

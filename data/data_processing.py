@@ -1,13 +1,13 @@
 import pandas as pd
 
 DATASETS_PATH = "./data/datasets/"
-FILENAME_TO_READ = "datos_sinteticos_tabularlstm_preprocess.csv"
-FILENAME_TO_SAVE = "datos_sinteticos_tabularlstm.csv"
-#df = pd.read_excel(DATASETS_PATH + FILENAME_TO_READ)
-df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
+FILENAME_TO_READ = "MENISCOS_FILTRADO.xlsx" #datos_sinteticos_tabularlstm_preprocess.csv"
+FILENAME_TO_SAVE = "datos_procesados.csv"
+df = pd.read_excel(DATASETS_PATH + FILENAME_TO_READ)
+#df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
 
 ######################################################## RENAME INVALID NAME COLUMNS ########################################################
-"""                                            
+                                          
 df.rename( columns = {'\nNacionalidad': 'NACIONALIDAD', 'CIRUGÍA': 'Cirugia','TRAUMÁTICA': 'Traumatica',
        'DOLOR INTERLÍNEA': 'Dolor Interlinea', 'MCMURRAY +': 'MCMurray',
       'Anticoagulación': 'Anticoagulacion', 'Cáncer': 'Cancer', 
@@ -24,7 +24,6 @@ df = df.drop(columns = ['NACIONALIDAD', 'Trabajo', 'Zona Condropatia', 'Dolor en
        'tiempo desde fracaso (meses)', 'Unnamed: 63', 'RMN POST',
        'Unnamed: 65', 'SUTURA VS MENISCECTOMIA', 'fecha de cirugía', 'Incorporación vida laboral', 'Deporte', 'satisfecho con la cirugía (1-4)', 'dolor actual 0-10', 'mejora con la cirugía'] )       
 
-"""
 ######################################################## UNIFY VALUES ########################################################
 #COLUMNA SEXO
 df_new = df.replace(['mujer', 'MUJER ', 'Mujer'], 'MUJER')
