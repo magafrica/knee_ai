@@ -9,11 +9,13 @@ datos_procesados= DATASET_PATH + 'datos_procesados_mayoria_7.csv'  # CSV con 167
 train_csv = DATASET_PATH + 'train_mayoria_7.csv'    # CSV con 5000 filas
 test_csv = DATASET_PATH + 'test_mayoria_7.csv'      # CSV con 67 filas
 
-df = pd.read_csv(sinteticos)
-df.drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1, inplace=True)
+df = pd.read_csv(sinteticos, sep=';')
+print(df.head())
+df.drop(columns=['Unnamed: 0','Unnamed: 0.1','Unnamed: 0.1.1','Unnamed: 0.1.1.1','Unnamed: 0.1.1.1.1'], inplace=True)
 df.to_csv(sinteticos, sep=';')
-df = pd.read_csv(datos_procesados)
-df.drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1, inplace=True)
+df = pd.read_csv(datos_procesados, sep=';')
+print(df.head())
+df.drop(columns=['Unnamed: 0','Unnamed: 0.1'], inplace=True)
 df.to_csv(datos_procesados, sep=';')
 # Leer el contenido del primer archivo CSV
 datos1 = []
