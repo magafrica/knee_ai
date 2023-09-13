@@ -2,7 +2,7 @@ import pandas as pd
 
 DATASETS_PATH = "./data/datasets/"
 FILENAME_TO_READ = "MENISCOS_FILTRADO.xlsx" #datos_sinteticos_tabularlstm_preprocess.csv"
-FILENAME_TO_SAVE = "datos_procesados.csv"
+FILENAME_TO_SAVE = "datos_procesados_v2.csv"
 df = pd.read_excel(DATASETS_PATH + FILENAME_TO_READ)
 #df = pd.read_csv(DATASETS_PATH + FILENAME_TO_READ, sep= ";")
 

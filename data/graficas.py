@@ -4,7 +4,7 @@ import json
 import numpy as np
 
 DATASETS_PATH = "./data/datasets/"
-FILENAME_TO_READ = "datos_sinteticos_version1.csv"
+FILENAME_TO_READ = "datos_procesados_v2.csv"
 JSON_PATH = "./data/JSON/"
 UNIQUE_VALUES = "unique_values.json"
 STATISCICS = "statistics_values.json"
@@ -22,7 +22,8 @@ missing_value_df = pd.DataFrame({'column_name': df_to_plot.columns,
 percent_missing = percent_missing.to_list()
 columns = df_to_plot.columns.to_list()       
 threshold = 50
-
+for percent,column in zip(percent_missing, columns):
+       print(column, percent, sep= ",")
 # Asignar colores basado en el umbral
 colors = np.where(missing_value_df['Porcentaje'] >= threshold, '#d34040', '#4090d3')
         
@@ -30,10 +31,17 @@ colors = np.where(missing_value_df['Porcentaje'] >= threshold, '#d34040', '#4090
 missing_value_df.plot(x='column_name', y='Porcentaje', kind='barh', color=colors)
 plt.title('Porcentaje de valores sin rellenar')
 if SAVEFIG:
-       plt.savefig('./data/graficas/Missing_values.png')
+       plt.savefig('./data/graficas/Missing_values.svg')
 plt.show()
 
 lysholm_score_list = list(df["lysholm score post"])
+plt.hist(lysholm_score_list, bins = 100, color= '#4090d3', edgecolor='black')
+plt.yticks(list(map(int, plt.yticks()[0])))
+plt.title('Lysholm Score')
+plt.xlabel('Puntuación')
+plt.ylabel('Frecuencia')
+plt.savefig("./data/graficas/lysholm_scores.svg")
+plt.show()
 for i in range(len(lysholm_score_list)):
        lysholm_score_list[i] = int(lysholm_score_list[i])
        
@@ -61,9 +69,9 @@ plt.hist(ordered_data, bins=4, color= '#4090d3', edgecolor='black')
 plt.xticks(category_order)
 plt.xlabel('Rango')
 plt.ylabel('Frecuencia')
-plt.title('Lysholm Score')
+plt.title('Lysholm Score en categorías')
 if SAVEFIG:
-       plt.savefig("./data/graficas/lysholm_categories.png")
+       plt.savefig("./data/graficas/lysholm_categories.svg")
 plt.show()
 
 #GRAFICA ESTABILIIDAD
@@ -73,7 +81,7 @@ with open(JSON_PATH + STATISCICS, 'r') as f:
 column_name = []
 stability = []   
 for entry in data:
-    print(data[entry])
+    #print(data[entry])
     if entry not in ['Edad', 'Angulo 1', 'IMC', 'Espacio Intraarticular', 'Kellgren', 'Extrusion', 'lysholm score post', 'Angulo Genu Varo', 'Angulo Genu Valgo', 'Grado', 'Espacio Intraarticular (mm)']:
         column_name.append(entry)
         stability.append(data[entry]["stability"])
@@ -83,7 +91,8 @@ stability_value_df = pd.DataFrame({'column_name': column_name,
                                  'Estabilidad': stability,
                                   })
             
-#print(missing_value_df)
+for col in stability_value_df:
+       print(stability_value_df[col])
 # Establecer umbral
 STABILITY_THRESHOLD = 0.85
 
@@ -94,7 +103,7 @@ colors = np.where(stability_value_df['Estabilidad'] >= STABILITY_THRESHOLD, '#d3
 stability_value_df.plot(x='column_name', y='Estabilidad', kind='barh', color=colors)
 
 # Mostrar la grafica
-plt.title('Estabilidad de los Atributos')
+plt.title('Diversidad de los Atributos')
 if SAVEFIG:
-       plt.savefig('./data/graficas/Stability_values.png')
+       plt.savefig('./data/graficas/Stability_values.svg')
 plt.show()

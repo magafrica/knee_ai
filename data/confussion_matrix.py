@@ -5,13 +5,13 @@ from sklearn import metrics
 
 # Load data from CSV
 DATASET_PATH = "./data/datasets/"
-FILENAME_TO_READ = DATASET_PATH + 'random-forest-valores.csv'
+FILENAME_TO_READ = DATASET_PATH + 'arbol-decision-valores.csv'
 SAVEFIG = True
 data = pd.read_csv(FILENAME_TO_READ, sep=';')
 
 # Extract true labels and predicted labels from the data
-y_true = data['real-0,9'].tolist()
-y_pred = data['predict-0,9'].tolist()
+y_true = data['real-0.8'].tolist()
+y_pred = data['predict-0.8'].tolist()
 for i in range(len(y_true)):
     if y_true[i] < 65:
         y_true[i] = 0
@@ -41,7 +41,7 @@ confusion_matrix = metrics.confusion_matrix(y_true, y_pred)
 cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = ['Pobre', 'Aceptable', 'Bueno', 'Excelente'])
 
 cm_display.plot()
-plt.title("Matriz de confusión random forest, sensibilidad 0,9")
+plt.title("Matriz de confusión Árbol de Decisión")
 if SAVEFIG:
-    plt.savefig('./data/graficas/mc_RF_0.9.png')
+    plt.savefig('./data/graficas/mC_arbol_decision_best.png')
 plt.show() 
